@@ -20,7 +20,7 @@ title: Monorepo 는 왜 사용하는가?
 Nodejs & Web 개발 환경에서
 
 <!--
-The last comment block of each slide will be treated as slide notes. It will be visible and editable in Presenter Mode along with the slide. [Read more in the docs](https://sli.dev/guide/syntax.html#notes)
+nodejs 와 web 개발 환경에서 모노레포를 사용 하는 건을 왜 추천 하는지를 오늘 이야기 하고 자 합니다
 -->
 
 ---
@@ -85,7 +85,11 @@ layout: cover
 <div v-click="7"></div>
 
 <!--
-우리는 Web Mobile Tv 등등 에 프로젝트 들이 Utils Hooks Components 등을 복잡하게 공유 하면서 사용 하고 싶습니다 
+우리는 디바이스나 환경별 Web Mobile TV 등등 에서 프로젝트 들이 Utils Hooks Components 등을 복잡하게 공유 하면서 사용 하고 싶습니다 
+
+왜냐면 코드를 재사용하여 코드를 적게 작성 하고 싶고 적은 코드는 더 많이 오류를 줄여 주기 때문입니다
+
+그리고 코드 재사용은 관심사 분리와 코드 퍼포먼스를 향상 시키며 물리적인 코드 작업량을 상당히 감소 시키며 런타임 퍼포먼스 향상 특히 web 작동 환경에서 중요한 용량도 상당히 줄여 줍니다 
 -->
 
 ---
@@ -111,7 +115,9 @@ layout: section
 
 ## 👑 전역 (Root) 관리가 가능하다
 
-<br>
+<!--
+그런데 2개 이상 프로젝트 또는 코드 재사용을 위해서 왜 하필 모노레포를 사용 해야 할까요?
+-->
 
 ---
 layout: section
@@ -207,13 +213,19 @@ layout: section
 
 <div class="m-auto rounded-full bg-green c-black text-4xl p-4xl relative" style="width: 530px; height: 400px">
 Root 패키지
-<div class="rounded-full bg-blue flex" style="width: 220px; height: 220px"><span class="m-auto">내부 패키지1</span></div>
-<div class="rounded-full bg-blue flex absolute top-30 left-67" style="width: 220px; height: 220px"><span class="m-auto">내부 패키지2</span></div>
-<div v-click="1">
-<div class="rounded-full bg-red flex absolute top-70 left-50" style="width: 80px; height: 80px"><span class="m-auto">유틸</span></div>
-<arrow x1="220" y1="300" x2="150" y2="270" color="white" width="3" arrowSize="1" />
-<arrow x1="260" y1="295" x2="300" y2="270" color="white" width="3" arrowSize="1" />
-</div>
+  <div class="rounded-full bg-blue flex" style="width: 220px; height: 220px"><span class="m-auto">내부 패키지1</span></div>
+  <div class="rounded-full bg-blue flex absolute top-30 left-67" style="width: 220px; height: 220px"><span class="m-auto">내부 패키지2</span></div>
+  <div v-click="1">
+    <div class="rounded-full bg-red flex absolute top-70 left-50" style="width: 80px; height: 80px">
+      <span class="m-auto">유틸</span>
+    </div>
+    <arrow x1="220" y1="300" x2="150" y2="270" color="white" width="3" arrowSize="1" />
+    <arrow x1="260" y1="295" x2="300" y2="270" color="white" width="3" arrowSize="1" />
+  </div>
+  <div v-click="2">
+    <arrow x1="250" y1="100" x2="150" y2="120" color="white" width="3" arrowSize="1" />
+    <arrow x1="280" y1="100" x2="350" y2="180" color="white" width="3" arrowSize="1" />
+  </div>
 </div>
 
 <!--
@@ -330,6 +342,14 @@ layout: section
 3. 빌드와 배포시 의존성 문제
 4. 라이브러리 사용전에 빌드가 필요하다
 -->
+
+---
+layout: section
+---
+
+# 그래서 누가 쓰지요?
+
+### [Google](https://youtu.be/W71BTkUbdqE?t=994), [Facebook](https://www.facebook.com/atscaleevents/videos/systems-scale-2019-monorepos-moving-fast-in-a-huge-repository/457153524992062/), [Microsoft](https://devblogs.microsoft.com/cse/2021/11/23/working-with-a-monorepo/), Stripe ...
 
 ---
 layout: section
